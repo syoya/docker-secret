@@ -16,4 +16,4 @@ $ docker exec -it c76 cat /secret/example.json
 {"foo":"bar}
 ```
 
-`SECRETS` can be specified multiple env-filename map with comma delimiter like `[environment-variable-name]=[filename],[environment-variable-name]=[filename],...`.
+`SECRETS` can be specified multiple env-filename map with comma delimiter like `FILE_A=a.txt,FILE_B=b.txt,...`.
