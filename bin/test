@@ -1,0 +1,20 @@
+#!/bin/bash
+
+json=$(cat test/fixtures/example.json | base64)
+text=$(cat test/fixtures/example.txt | base64)
+yaml=$(cat test/fixtures/example.yml | base64)
+
+docker run \
+  -itd \
+  -e JSON="$json" \
+  -e TEXT="$text" \
+  -e YAML="$yaml" \
+  -e SECRETS="JSON=example.json,TEXT=example.txt,YAML=example.yml" \
+  -v "$(pwd)/secret:/secret" \
+  secret
+
+sleep 1
+
+ls -al secret
+
+md5sum -c test/fixtures/MD5SUMS

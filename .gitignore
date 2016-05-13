@@ -23,5 +23,5 @@ _testmain.go
 *.test
 *.prof
 
-# YAML
-*.yml
+.env
+secret
